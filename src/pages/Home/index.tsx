@@ -1,6 +1,9 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { useTheme } from 'styled-components'
+import { CoffeItem } from '../../components/CoffeItem'
+import { CoffeCategory } from '../../model/Coffe'
 import {
+  CatalogContent,
   CoffeeList,
   HomeContainer,
   Info,
@@ -64,18 +67,46 @@ export function Home() {
         <img src="/src/assets/intro-img.svg" alt="" />
         <img src="/src/assets/intro-bg.svg" id="intro-bg" alt="" />
       </InfoContainer>
-      <CoffeeList>
+      <CatalogContent>
         <h2>Nossos Cafés</h2>
-        <div>
-          <span>Café 1</span>
-          <span>Café 1</span>
-          <span>Café 1</span>
-          <span>Café 1</span>
-          <span>Café 1</span>
-          <span>Café 1</span>
-          <span>Café 1</span>
-        </div>
-      </CoffeeList>
+        <CoffeeList>
+          <CoffeItem
+            name="Coffe 1"
+            description="Coffe 1 desc"
+            img="/src/assets/americano.png"
+            price={9.9}
+            categories={[CoffeCategory.TRADICIONAL]}
+          />
+          <CoffeItem
+            name="Coffe 1"
+            description="Coffe 1 desc"
+            img="/src/assets/americano.png"
+            price={9.9}
+            categories={[CoffeCategory.TRADICIONAL]}
+          />
+          <CoffeItem
+            name="Coffe 1"
+            description="Coffe 1 desc"
+            img="/src/assets/americano.png"
+            price={9.9}
+            categories={[CoffeCategory.TRADICIONAL]}
+          />
+          <CoffeItem
+            name="Coffe 1"
+            description="Coffe 1 desc"
+            img="/src/assets/americano.png"
+            price={9.9}
+            categories={[CoffeCategory.TRADICIONAL]}
+          />
+          <CoffeItem
+            name="Coffe 1"
+            description="Coffe 1 desc"
+            img="/src/assets/americano.png"
+            price={9.9}
+            categories={[CoffeCategory.TRADICIONAL]}
+          />
+        </CoffeeList>
+      </CatalogContent>
     </HomeContainer>
   )
 }

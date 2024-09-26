@@ -69,18 +69,26 @@ export const InfoContent = styled.div`
   }
 `
 
+export const CatalogContent = styled.div`
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.75rem;
+    ${mixins.fonts.titleL}
+  }
+`
+
 export const CoffeeList = styled.section`
   max-width: 1160px;
   padding: 32px 20px 150px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 54px;
-
-  > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row-gap: 40px;
-    grid-column-gap: 32px;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 40px;
+  grid-column-gap: 32px;
 `
