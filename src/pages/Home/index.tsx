@@ -1,7 +1,7 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { CoffeItem } from '../../components/CoffeItem'
-import { CoffeCategory } from '../../model/Coffe'
+import { data } from '../../db/data'
 import {
   CatalogContent,
   CoffeeList,
@@ -70,41 +70,19 @@ export function Home() {
       <CatalogContent>
         <h2>Nossos Cafés</h2>
         <CoffeeList>
-          <CoffeItem
-            name="Coffe 1"
-            description="Coffe 1 desc"
-            img="/src/assets/americano.png"
-            price={9.9}
-            categories={[CoffeCategory.TRADICIONAL]}
-          />
-          <CoffeItem
-            name="Coffe 1"
-            description="Coffe 1 desc"
-            img="/src/assets/americano.png"
-            price={9.9}
-            categories={[CoffeCategory.TRADICIONAL]}
-          />
-          <CoffeItem
-            name="Coffe 1"
-            description="Coffe 1 desc"
-            img="/src/assets/americano.png"
-            price={9.9}
-            categories={[CoffeCategory.TRADICIONAL]}
-          />
-          <CoffeItem
-            name="Coffe 1"
-            description="Coffe 1 desc"
-            img="/src/assets/americano.png"
-            price={9.9}
-            categories={[CoffeCategory.TRADICIONAL]}
-          />
-          <CoffeItem
-            name="Coffe 1"
-            description="Coffe 1 desc"
-            img="/src/assets/americano.png"
-            price={9.9}
-            categories={[CoffeCategory.TRADICIONAL]}
-          />
+          {data.map((coffe) => {
+            return (
+              <CoffeItem
+                key={coffe.id}
+                id={coffe.id}
+                name={coffe.name}
+                description={coffe.description}
+                img={coffe.img}
+                categories={coffe.categories}
+                price={coffe.price}
+              />
+            )
+          })}
         </CoffeeList>
       </CatalogContent>
     </HomeContainer>
